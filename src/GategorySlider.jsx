@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { useProducts, featuredProduct } from "./Components/useProduct";
 import Slider from "react-slick";
+import 'react-multi-carousel/lib/styles.css';
 export default function MainSlider() {
   function getAllProduct() {
     return axios.get(`https://ecommerce.routemisr.com/api/v1/categories`);
@@ -22,22 +23,51 @@ export default function MainSlider() {
     autoplay: true,
     autoplaySpeed: 1500,
     focusOnSelect: true,
-    // dots: true,
-    // infinite: true,
-    // speed: 500,
-    // slidesToShow: 6,
-    // slidesToScroll: 6,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 6,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 0,
+          slidesToScroll: 0
+        }
+      }
+    ]
   };
+ 
+
   return (
-    <div className="row my-5">
+    <div className="row my-5 ">
       <Slider {...settings}>
-        {data?.map((cat) => (
-          <div key={cat._id}>
+      
+      {data?.map((cat) => (
+          <div  key={cat._id} className="slider">
             <img src={cat.image} className="w-100" height={200} alt="" />
             <h5 className="my-3  text-main">{cat.name}</h5>
           </div>
-        ))}
-      </Slider>
+        ))} 
+     </Slider>
     </div>
   );
 }

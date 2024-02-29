@@ -159,7 +159,7 @@ export default function Cart() {
                 </div>
               ))}
               <Link to="/address" className="btn btn-bord fw-bold  my-3 w-25">
-                <span className="fw-bold fs-5">CheckOut</span>
+                <span className="fw-bold ">CheckOut</span>
                 <i className="fa-brands  text-main me-auto fa-cc-visa mt-3 mx-2 fa-xl"></i>
               </Link>
             </>

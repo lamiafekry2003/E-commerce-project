@@ -5,6 +5,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
