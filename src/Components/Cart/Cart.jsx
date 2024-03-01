@@ -33,9 +33,6 @@ export default function Cart() {
   // console.log(updatedData?.data?.success)
   let { mutate: clear, isLoading: isclear } = useCartCurd(clearCart);
   if (isLoading) return <Loading></Loading>;
-  if (removecard) return <Loading></Loading>;
-  if (isubdate) return <Loading></Loading>;
-  if (isclear) return <Loading></Loading>;
 
   if (isError)
     return (

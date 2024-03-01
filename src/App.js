@@ -11,7 +11,6 @@ import { userContext } from "./UserContext";
 import ProtactedRouter from "./Components/ProtectedRouter";
 import Loading from "./Components/Loading";
 import { Suspense, lazy } from "react";
-import BrandDetails from "./Components/BrandDetails";
 import GategoryDetails from "./Components/GategoryDetails";
 import ResetCode from "./Components/ResetCode/ResetCode";
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
@@ -70,16 +69,6 @@ function App() {
             <ProtactedRouter>
               <Suspense fallback={<Loading></Loading>}>
                 <Orders></Orders>
-              </Suspense>
-            </ProtactedRouter>
-          ),
-        },
-        {
-          path: "brands/:id",
-          element: (
-            <ProtactedRouter>
-              <Suspense fallback={<Loading></Loading>}>
-                <BrandDetails></BrandDetails>
               </Suspense>
             </ProtactedRouter>
           ),

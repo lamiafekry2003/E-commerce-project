@@ -6,11 +6,14 @@ import ScrollToTop from "react-scroll-to-top";
 
 export default function Layout() {
   return (
-    <div className='parent '>
-      <Navbar/>
-      <Outlet/>
-      <ScrollToTop smooth color="white" style={{backgroundColor:'#0aad0a',fontWeight:'bold'}}/>
-      <Footer/>
+    <div className=''>
+     <Navbar></Navbar>
+     <div className="parent">
+     <Outlet/>
+     <ScrollToTop smooth style={{backgroundColor:'#0aad0a'}} color='white'/>
+     </div>
+     <Footer/>
     </div>
+    
   )
 }
