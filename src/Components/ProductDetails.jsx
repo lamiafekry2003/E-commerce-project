@@ -7,8 +7,8 @@ import {  useWishList,addToWishList } from "./useWishlist";
 import { Helmet } from "react-helmet";
 import { Carousel } from 'react-responsive-carousel';
 export default function ProductDetails() {
-  let {mutate}=useCartCurd(addToCart)
-  let {mutate:wish}=useWishList(addToWishList)
+  let {mutate,isLoading:add}=useCartCurd(addToCart)
+  let {mutate:wish,isLoading:favo}=useWishList(addToWishList)
   const [heart , setHeart] = useState(false)
   const { id } = useParams();
   // console.log(id)
@@ -16,6 +16,8 @@ export default function ProductDetails() {
     featuredSingleProduct(id)
   );
   if (isLoading) return <Loading></Loading>;
+  if (add) return <Loading></Loading>;
+  if (favo) return <Loading></Loading>;
 
   if (isError) return <h2 className="text-center">{error.message}</h2>;
   return (

@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Loading from './Loading';
 import { addToCart, useCartCurd } from './useCart'
 import {  useWishList,addToWishList } from "./useWishlist";
 export default function Product({prod}){
-  let {mutate}=useCartCurd(addToCart)
-  let {mutate:wish ,data}=useWishList(addToWishList)
+  let {mutate,isLoading}=useCartCurd(addToCart)
+  let {mutate:wish ,data ,isLoading:fav}=useWishList(addToWishList)
   console.log(data?.data)
   const [heart , setHeart] = useState(false)
   console.log(data?.data?.message)
+  if(isLoading) return <Loading></Loading>
+  if(fav) return <Loading></Loading>
     // console.log(item)
     return <div className="col-md-2">
       <div className="product  cursor-pointer p-2">

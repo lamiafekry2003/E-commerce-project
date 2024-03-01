@@ -15,10 +15,12 @@ export default function WishList() {
     "getWishlist",
     getWishlist
   );
-  let { mutate } = useCartCurd(addToCart);
-  let { mutate: remove } = useWishList(removeprodWish);
+  let { mutate ,isLoading:add} = useCartCurd(addToCart);
+  let { mutate: remove,isLoading:remv } = useWishList(removeprodWish);
      console.log(data?.data?.data)
   if (isLoading) return <Loading></Loading>;
+  if (add) return <Loading></Loading>;
+  if (remv) return <Loading></Loading>;
   if (isError) return <h2>{error?.message}</h2>;
   return (
     <div className="container">

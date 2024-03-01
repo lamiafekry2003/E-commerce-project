@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 
-export  function featuredProduct() {
-  return axios.get(`https://ecommerce.routemisr.com/api/v1/products`);
+export  function featuredProduct(quaryData) {
+  return axios.get(`https://ecommerce.routemisr.com/api/v1/products?page=${quaryData.queryKey[1]}`);
 }
 export  function featuredSingleProduct(id) {
   return axios.get(`https://ecommerce.routemisr.com/api/v1/products/${id}`);
