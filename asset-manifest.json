@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/E-commerce-project/static/css/main.69b8bee4.css",
-    "main.js": "/E-commerce-project/static/js/main.977f64e0.js",
-    "static/css/928.997e5506.chunk.css": "/E-commerce-project/static/css/928.997e5506.chunk.css",
-    "static/js/928.cbd22b1e.chunk.js": "/E-commerce-project/static/js/928.cbd22b1e.chunk.js",
+    "main.css": "/E-commerce-project/static/css/main.b01a30e3.css",
+    "main.js": "/E-commerce-project/static/js/main.3d20c7b4.js",
+    "static/css/868.f398ee78.chunk.css": "/E-commerce-project/static/css/868.f398ee78.chunk.css",
+    "static/js/868.8308adb6.chunk.js": "/E-commerce-project/static/js/868.8308adb6.chunk.js",
     "static/js/280.2a6dcedf.chunk.js": "/E-commerce-project/static/js/280.2a6dcedf.chunk.js",
     "static/js/528.297a0748.chunk.js": "/E-commerce-project/static/js/528.297a0748.chunk.js",
     "static/js/864.0c671881.chunk.js": "/E-commerce-project/static/js/864.0c671881.chunk.js",
     "static/js/768.93dc1924.chunk.js": "/E-commerce-project/static/js/768.93dc1924.chunk.js",
-    "static/js/264.4e7ff754.chunk.js": "/E-commerce-project/static/js/264.4e7ff754.chunk.js",
+    "static/js/264.97c39d61.chunk.js": "/E-commerce-project/static/js/264.97c39d61.chunk.js",
     "static/js/592.e4d14ed2.chunk.js": "/E-commerce-project/static/js/592.e4d14ed2.chunk.js",
-    "static/js/560.70745c0a.chunk.js": "/E-commerce-project/static/js/560.70745c0a.chunk.js",
+    "static/js/420.a446cab0.chunk.js": "/E-commerce-project/static/js/420.a446cab0.chunk.js",
+    "static/js/152.3460d196.chunk.js": "/E-commerce-project/static/js/152.3460d196.chunk.js",
     "static/media/fa-solid-900.ttf": "/E-commerce-project/static/media/fa-solid-900.45a265d0f07b31cde85f.ttf",
     "static/media/slider-image-1.jpeg": "/E-commerce-project/static/media/slider-image-1.3c3940ee0f1c3b17ff9a.jpeg",
     "static/media/assortment-citrus-fruits.png": "/E-commerce-project/static/media/assortment-citrus-fruits.2a7b348c0ee4a126fb83.png",
@@ -35,20 +36,21 @@
     "static/media/slick.ttf": "/E-commerce-project/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/E-commerce-project/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/E-commerce-project/index.html",
-    "main.69b8bee4.css.map": "/E-commerce-project/static/css/main.69b8bee4.css.map",
-    "main.977f64e0.js.map": "/E-commerce-project/static/js/main.977f64e0.js.map",
-    "928.997e5506.chunk.css.map": "/E-commerce-project/static/css/928.997e5506.chunk.css.map",
-    "928.cbd22b1e.chunk.js.map": "/E-commerce-project/static/js/928.cbd22b1e.chunk.js.map",
+    "main.b01a30e3.css.map": "/E-commerce-project/static/css/main.b01a30e3.css.map",
+    "main.3d20c7b4.js.map": "/E-commerce-project/static/js/main.3d20c7b4.js.map",
+    "868.f398ee78.chunk.css.map": "/E-commerce-project/static/css/868.f398ee78.chunk.css.map",
+    "868.8308adb6.chunk.js.map": "/E-commerce-project/static/js/868.8308adb6.chunk.js.map",
     "280.2a6dcedf.chunk.js.map": "/E-commerce-project/static/js/280.2a6dcedf.chunk.js.map",
     "528.297a0748.chunk.js.map": "/E-commerce-project/static/js/528.297a0748.chunk.js.map",
     "864.0c671881.chunk.js.map": "/E-commerce-project/static/js/864.0c671881.chunk.js.map",
     "768.93dc1924.chunk.js.map": "/E-commerce-project/static/js/768.93dc1924.chunk.js.map",
-    "264.4e7ff754.chunk.js.map": "/E-commerce-project/static/js/264.4e7ff754.chunk.js.map",
+    "264.97c39d61.chunk.js.map": "/E-commerce-project/static/js/264.97c39d61.chunk.js.map",
     "592.e4d14ed2.chunk.js.map": "/E-commerce-project/static/js/592.e4d14ed2.chunk.js.map",
-    "560.70745c0a.chunk.js.map": "/E-commerce-project/static/js/560.70745c0a.chunk.js.map"
+    "420.a446cab0.chunk.js.map": "/E-commerce-project/static/js/420.a446cab0.chunk.js.map",
+    "152.3460d196.chunk.js.map": "/E-commerce-project/static/js/152.3460d196.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.69b8bee4.css",
-    "static/js/main.977f64e0.js"
+    "static/css/main.b01a30e3.css",
+    "static/js/main.3d20c7b4.js"
   ]
 }
