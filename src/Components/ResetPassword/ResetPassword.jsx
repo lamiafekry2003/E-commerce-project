@@ -50,7 +50,7 @@ export default function ResetPassword() {
   return (
     <div className="container  py-3">
       <Helmet>
-        <title>Login</title>
+        <title>ResetPassword</title>
         <meta name="description" content="Helmet application" />
       </Helmet>
       <div className="row">

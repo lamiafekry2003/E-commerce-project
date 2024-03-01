@@ -56,7 +56,7 @@ export default function UpdatePassword() {
   return (
     <div className="container  py-3">
       <Helmet>
-        <title>Register</title>
+        <title>UpdatePassword</title>
         <meta name="description" content="Helmet application" />
       </Helmet>
       <div className="row">

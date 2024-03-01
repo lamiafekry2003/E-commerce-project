@@ -47,8 +47,9 @@ export default function ForgetPass() {
   return (
     <div className="container  py-3">
       <Helmet>
-        <title>Login</title>
+        <title>ForgetPassword</title>
         <meta name="description" content="Helmet application" />
+        
       </Helmet>
       <div className="row">
         <div className="col-md-12 my-5 p-5">

@@ -4,7 +4,6 @@ import { useProducts, featuredSingleProduct } from "./useProduct";
 import Loading from "./Loading";
 import { addToCart, useCartCurd } from './useCart'
 import {  useWishList,addToWishList } from "./useWishlist";
-import Slider from "react-slick";
 import { Helmet } from "react-helmet";
 import { Carousel } from 'react-responsive-carousel';
 export default function ProductDetails() {
@@ -18,20 +17,7 @@ export default function ProductDetails() {
   );
   if (isLoading) return <Loading></Loading>;
 
-  if (isError) return <h2>{error.message}</h2>;
-  // var settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   arrows: false,
-  //   // autoplay:true,
-  //   autoplaySpeed:1500,
-  //   focusOnSelect:true,
-   
-  // };
-
+  if (isError) return <h2 className="text-center">{error.message}</h2>;
   return (
     <div className="container">
       <Helmet>
@@ -40,13 +26,9 @@ export default function ProductDetails() {
     </Helmet>
       <div className="row align-items-center my-3">
         <div className="col-md-4 mt-5">
-          {/* <img src={data?.imageCover} className="w-100" alt="" /> */}
-          {/* <Slider {...settings} className="mb-3"> */}
           <Carousel showArrows={false}  autoPlay infiniteLoop >
           {data?.images.map((img)=><img className="w-100" src={img} alt={img}/>)}
           </Carousel>
-            
-          {/* </Slider> */}
         </div>
         <div className="col-md-8 ">
           <div className="d-flex justify-content-between">

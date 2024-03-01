@@ -177,3 +177,11 @@ aside {
   border-radius: 50% !important;
   background-color: none;
 }
+
+@media (max-width:580px) {
+  .no{
+    display: none;
+  }
+    
+}
+  

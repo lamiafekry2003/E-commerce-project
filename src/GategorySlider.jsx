@@ -1,8 +1,6 @@
 import axios from "axios";
 import React from "react";
 import { useQuery } from "react-query";
-import { Link } from "react-router-dom";
-import { useProducts, featuredProduct } from "./Components/useProduct";
 import Slider from "react-slick";
 import 'react-multi-carousel/lib/styles.css';
 export default function MainSlider() {
@@ -49,8 +47,8 @@ export default function MainSlider() {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 0,
-          slidesToScroll: 0
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       }
     ]
@@ -59,7 +57,7 @@ export default function MainSlider() {
 
   return (
     <div className="row my-5 ">
-      <Slider {...settings}>
+      <Slider {...settings} className="no">
       
       {data?.map((cat) => (
           <div  key={cat._id} className="slider">

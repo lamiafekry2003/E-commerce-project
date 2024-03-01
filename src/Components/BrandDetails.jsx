@@ -19,10 +19,10 @@ export default function BrandDetails() {
       if (isError) return <h2>{error.message}</h2>;
       return (
         <div className="container">
-          {/* <Helmet>
+          <Helmet>
             <title>BrandDetails</title>
             <meta name="description" content="Helmet application" />
-        </Helmet> */}
+        </Helmet>
           <div className="row align-items-center my-3 main-color">
             {/* <img src={data.image} alt="" /> */}
            <div className="col-md-4">

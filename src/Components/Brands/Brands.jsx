@@ -16,7 +16,7 @@ export default function Brands() {
   })
   if (isLoading) return <Loading></Loading>;
 
-  if (isError) return <h2>{error.message}</h2>;
+  if (isError) return <h2 className='text-center'>{error.message}</h2>;
 
   console.log(data)
   

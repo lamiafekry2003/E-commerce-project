@@ -2,6 +2,7 @@ import React from 'react'
 import { getSingleGategory, useGetGat } from './useGategory'
 import { useParams} from 'react-router-dom'
 import Loading from './Loading'
+import { Helmet } from "react-helmet";
 export default function GategoryDetails() {
   const { id } = useParams();
     let {data,isLoading ,isError ,error} =useGetGat('gategoryDetails',()=>getSingleGategory(id),
@@ -16,6 +17,10 @@ export default function GategoryDetails() {
     console.log(data)
   return (
     <div className='container'>
+      <Helmet>
+        <title>UpdatePassword</title>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
         <div className="row align-items-center my-3 main-color">
          <div className="col-md-4">
             <img src={data?.data?.data?.image} alt="" className="w-75 my-1" />

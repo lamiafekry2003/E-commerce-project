@@ -45,7 +45,7 @@ export default function ResetCode() {
     return (
       <div className="container  py-3">
         <Helmet>
-          <title>Login</title>
+          <title>ResetCode</title>
           <meta name="description" content="Helmet application" />
       </Helmet>
         <div className="row">
