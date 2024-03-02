@@ -39,34 +39,36 @@ export default function Brands() {
       <div className="row">
         {data?.map((brand) => (
           <div key={brand?._id} className="col-md-3 text-center">
-            <div className="product  cursor-pointer p-2">
-              <div data-bs-toggle="modal"
-                data-bs-target={`#${brand?.id}`}>
+            <div className="product  cursor-pointer p-1">
+              <div data-bs-toggle="modal" data-bs-target={"#" + brand?.name}>
                 <img src={brand.image} alt="" />
-                <p className="text-center fw-bold">{brand.name}</p>
+                <p className="text-center text-main fw-bold">{brand.name}</p>
               </div>
-              {/* ---------------------------- */}
             </div>
           </div>
         ))}
         {data?.map((brand) => (
           <>
-
             <div
               class="modal fade"
-              id={`${brand?.id}`}
+              id={brand?.name}
               tabindex="-1"
               aria-labelledby="exampleModalLabel"
               aria-hidden="true"
             >
               <div class="modal-dialog">
                 <div class="modal-content">
-                <div class="modal-header">
-                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                  
+                  <div class="modal-header">
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+
                   <div class="modal-body">
-                    <img src={brand?.image} alt="" className="w-100"/>
+                    <img src={brand?.image} alt="" className="w-100" />
                   </div>
                 </div>
               </div>

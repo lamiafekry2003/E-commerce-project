@@ -23,7 +23,7 @@ export default function Cart() {
     data: deletedData,
     isLoading: removecard,
   } = useCartCurd(removeprodCart);
-  const [loading, setLoading] = useState(false);
+  let { mutate: clear, isLoading: isclear } = useCartCurd(clearCart);
   // console.log(deletedData?.data?.status)
   let {
     mutate: updatedata,
@@ -31,10 +31,10 @@ export default function Cart() {
     isLoading: isubdate,
   } = useCartCurd(updateprodCart);
   // console.log(updatedData?.data?.success)
-  let { mutate: clear, isLoading: isclear } = useCartCurd(clearCart);
   if (isLoading) return <Loading></Loading>;
   if (isubdate) return <Loading></Loading>;
   if (removecard) return <Loading></Loading>;
+  if (isclear) return <Loading></Loading>;
 
 
   if (isError)
@@ -90,10 +90,10 @@ export default function Cart() {
                 Total Cart Price : {data?.data?.data?.totalCartPrice} EGP
               </p>
               <button
-                className="btn text-white clear green-color ms-auto d-block "
+                className="btn btn-bord fw-bold clear ms-auto d-block "
                 onClick={clear}
               >
-                <i className="fa-solid  text-light fa-trash me-auto"></i> Clear
+                <i className="fa-solid text-main fa-trash me-auto"></i> Clear
                 Cart
               </button>
               {data?.data?.data?.products?.map((prod) => (

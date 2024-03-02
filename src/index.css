@@ -109,7 +109,7 @@ aside {
   top: 0;
   bottom: 0;
   right: -100%;
-  z-index: 99999;
+  z-index: 9999999999;
   overflow-y: auto;
 }
 .curser {
@@ -165,6 +165,9 @@ aside {
 }
 .clear:hover{
   background-color: red;
+}
+.clear:hover i{
+  color: white;
 }
 .noorder{
   display: block;

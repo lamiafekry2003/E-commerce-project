@@ -16,12 +16,12 @@ export default function GategoryDetails() {
 
     console.log(data)
   return (
-    <div className='container'>
+    <div className='container mt-5 p-5'>
       <Helmet>
         <title>UpdatePassword</title>
         <meta name="description" content="Helmet application" />
       </Helmet>
-        <div className="row align-items-center my-3 main-color">
+        <div className="row align-items-center  main-color">
          <div className="col-md-4">
             <img src={data?.data?.data?.image} alt="" className="w-75 my-1" />
          </div>

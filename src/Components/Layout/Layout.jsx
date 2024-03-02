@@ -12,7 +12,7 @@ export default function Layout() {
      <Outlet/>
      <ScrollToTop smooth style={{backgroundColor:'#0aad0a'}} color='white'/>
      </div>
-     <Footer/>
+      <Footer/>
     </div>
     
   )

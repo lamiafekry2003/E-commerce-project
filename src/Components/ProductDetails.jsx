@@ -28,7 +28,7 @@ export default function ProductDetails() {
     </Helmet>
       <div className="row align-items-center my-3">
         <div className="col-md-4 mt-5">
-          <Carousel showArrows={false}  autoPlay infiniteLoop >
+          <Carousel showArrows={false} autoPlay infiniteLoop >
           {data?.images.map((img)=><img className="w-100" src={img} alt={img}/>)}
           </Carousel>
         </div>
