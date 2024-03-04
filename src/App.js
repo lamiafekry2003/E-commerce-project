@@ -36,7 +36,7 @@ function App() {
     }
   }, []);
 
-  const routs = createBrowserRouter([
+  const routs = createHashRouter([
     {
       path: "",
       element: <Layout></Layout>,
