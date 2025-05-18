@@ -24,7 +24,7 @@ export default function Home() {
     </Helmet>
       <MainSlider />
       <GategorySlider />
-      <div className="row gy-2">
+      <div className="row gy-2 gx-0 my-5">
         {data?.map((prod) => (
           <Product key={prod._id} prod={prod}></Product>
         ))}
