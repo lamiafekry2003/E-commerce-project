@@ -6,7 +6,7 @@ import MainSlider from "../../MainSlider";
 import GategorySlider from "../../GategorySlider";
 import { Helmet } from "react-helmet";
 export default function Home() {
-  let { data, isLoading, error, isError, isFetched } = useProducts(
+  let { data, isLoading, error, isError} = useProducts(
     "product",
     featuredProduct
   );
