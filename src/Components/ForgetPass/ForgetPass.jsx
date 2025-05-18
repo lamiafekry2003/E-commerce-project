@@ -184,7 +184,8 @@ export default function ForgetPass() {
               type="submit"
             >
               {loading ? (
-                <Bars
+                <span className="d-flex justify-content-center">
+                  <Bars
                   height="20"
                   width="40"
                   color="white"
@@ -193,6 +194,7 @@ export default function ForgetPass() {
                   wrapperClass=""
                   visible={true}
                 />
+                </span>
               ) : (
                 "Confirm"
               )}

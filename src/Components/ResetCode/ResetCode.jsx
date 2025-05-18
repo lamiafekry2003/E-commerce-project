@@ -183,15 +183,17 @@ export default function ResetCode() {
               type="submit"
             >
               {loading ? (
-                <Bars
-                  height="20"
-                  width="40"
-                  color="white"
-                  ariaLabel="bars-loading"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                  visible={true}
-                />
+                <span className="d-flex justify-content-center">
+                  <Bars
+                    height="20"
+                    width="40"
+                    color="white"
+                    ariaLabel="bars-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                  ></Bars>
+                </span>
               ) : (
                 "Verify"
               )}

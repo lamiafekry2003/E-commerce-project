@@ -337,20 +337,22 @@ export default function Register() {
             </div>
 
             <button
-              className="btn text-white bg-success w-100 mt-3"
+              className="btn text-white green-color w-100 mt-3"
               disabled={!(formik.isValid && formik.dirty)}
               type="submit"
             >
               {loading ? (
-                <Bars
-                  height="20"
-                  width="40"
-                  color="white"
-                  ariaLabel="bars-loading"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                  visible={true}
-                />
+                <span className="d-flex justify-content-center">
+                  <Bars
+                    height="20"
+                    width="40"
+                    color="white"
+                    ariaLabel="bars-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                  />
+                </span>
               ) : (
                 "Register"
               )}

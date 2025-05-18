@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { userContext } from "../../UserContext";
 import { Helmet } from "react-helmet";
@@ -8,7 +8,6 @@ import {
   removeprodCart,
   updateprodCart,
   useCartCurd,
-  useClearCard,
   useGetCart,
 } from "../useCart";
 import Loading from "../Loading";
@@ -16,21 +15,20 @@ import emptycart from "../../assessts/preview.png";
 
 export default function Cart() {
   let { open, setOpen } = useContext(userContext);
-  let { data, isError, error, isLoading } = useGetCart("getCart", getCart);
+  let { data, isError, isLoading } = useGetCart("getCart", getCart);
   // console.log(data)
   let {
     mutate,
-    data: deletedData,
+    // data: deletedData,
     isLoading: removecard,
   } = useCartCurd(removeprodCart);
   let { mutate: clear, isLoading: isclear } = useCartCurd(clearCart);
   // console.log(deletedData?.data?.status)
   let {
     mutate: updatedata,
-    data: updatedData,
+    // data: updatedData,
     isLoading: isubdate,
   } = useCartCurd(updateprodCart);
-  // console.log(updatedData?.data?.success)
   if (isLoading) return <Loading></Loading>;
   if (isubdate) return <Loading></Loading>;
   if (removecard) return <Loading></Loading>;
@@ -40,12 +38,11 @@ export default function Cart() {
   if (isError)
     return (
       <div className=" mt-5 ">
-        <h2 className="pt-5 text-main text-center fw-bold">Cart Empty</h2>
+        <h2 className=" text-main text-center fw-bold">Cart Empty</h2>
         <img src={emptycart} alt="emptycart" className="w-75 noorder" />
       </div>
     );
 
-  console.log(data?.data);
   return (
     <div>
       <Helmet>
@@ -53,7 +50,7 @@ export default function Cart() {
         <meta name="description" content="Helmet application" />
       </Helmet>
       {/* this cart */}
-      {data?.data?.numOfCartItems == 0 ? (
+      {data?.data?.numOfCartItems === 0 ? (
         <div className="  ">
          <h2 className=" text-main text-center fw-bold">Cart Empty</h2>
          <img src={emptycart} alt="emptycart" className="w-75 noorder" />
@@ -129,7 +126,7 @@ export default function Cart() {
                       <button
                         className="btn btn-bord"
                         onClick={() =>
-                          prod.count == prod.quantity
+                          prod.count === prod.quantity
                             ? prod.count
                             : updatedata({
                                 id: prod.product._id,
@@ -143,7 +140,7 @@ export default function Cart() {
                       <button
                         className="btn btn-bord"
                         onClick={() =>
-                          prod.count == 1
+                          prod.count === 1
                             ? mutate(prod.product._id)
                             : updatedata({
                                 id: prod.product._id,
@@ -165,7 +162,7 @@ export default function Cart() {
             </>
           ) : (
             <div className=" mt-5 ">
-              <h2 className="pt-5 text-main text-center fw-bold">Cart Empty</h2>
+              <h2 className=" text-main text-center fw-bold">Cart Empty</h2>
               <img src={emptycart} alt="emptycart" className="w-75 noorder" />
             </div>
           )}

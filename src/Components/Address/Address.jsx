@@ -145,7 +145,8 @@ export default function Address() {
               disabled={!(details && phone && city)}
             >
               {loading ? (
-                <Bars
+                <span className=' flex justify-content-center'>
+                  <Bars
                   height="20"
                   width="40"
                   color="white"
@@ -154,6 +155,7 @@ export default function Address() {
                   wrapperClass=""
                   visible={true}
                 />
+                </span>
               ) : (
                 "CheckOut"
               )}

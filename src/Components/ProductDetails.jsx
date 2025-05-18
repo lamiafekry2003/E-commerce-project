@@ -91,7 +91,7 @@ export default function ProductDetails() {
                 className="object-fit-cover mx-auto w-100"
                 
                 src={img}
-                alt={`${data?.title} image ${index + 1}`}
+                alt={data?.title ? `${data.title} ${index + 1}` : ""}
               />
             ))}
           </Carousel>

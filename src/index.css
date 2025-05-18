@@ -189,7 +189,9 @@ aside {
 .clear:hover i {
   color: white;
 }
-
+.green-color{
+  background-color: var(--main-color);
+}
 .noorder {
   display: block;
   margin-left: auto;

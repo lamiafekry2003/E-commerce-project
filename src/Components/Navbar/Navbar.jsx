@@ -208,24 +208,33 @@ import img1 from "../../assessts/freshcart-logo.svg";
 import { userContext } from "../../UserContext";
 import { getCart, useGetCart } from "../useCart";
 import { getWishlist, useGetWish } from "../useWishlist";
-import * as bootstrap from "bootstrap"; // Import Bootstrap JS
 
 export default function Navbar() {
   let { data } = useGetCart("getCart", getCart);
-  let { data: fav } = useGetWish("getWishlist", getWishlist);
+  useGetWish("getWishlist", getWishlist);
   const { user, setIsUser, setOpen, login } = useContext(userContext);
   const navigate = useNavigate();
 
   // Function to close the navbar collapse on mobile
   const closeNavbar = () => {
     const collapseElement = document.getElementById("navbarSupportedContent");
-    const bsCollapse = new bootstrap.Collapse(collapseElement, {
-      toggle: false,
-    });
-    bsCollapse.hide();
+    if (collapseElement && window.bootstrap && window.bootstrap.Collapse) {
+      console.log("Closing navbar collapse...");
+      const bsCollapse = new window.bootstrap.Collapse(collapseElement, {
+        toggle: false,
+      });
+      bsCollapse.hide();
+    } else {
+      console.warn("Bootstrap Collapse not available or element not found.");
+      // Fallback: manually hide the collapse
+      if (collapseElement) {
+        collapseElement.classList.remove("show");
+      }
+    }
   };
 
   function LogOut() {
+    console.log("Logging out...");
     setIsUser(null);
     localStorage.removeItem("userToken");
     navigate("");
@@ -280,15 +289,6 @@ export default function Navbar() {
                       Categories
                     </NavLink>
                   </li>
-                  {/* <li className="nav-item p-2">
-                    <NavLink
-                      className="nav-link"
-                      to="brands"
-                      onClick={closeNavbar}
-                    >
-                      Brands
-                    </NavLink>
-                  </li> */}
                   <li className="nav-item p-2">
                     <NavLink
                       className="nav-link"
@@ -314,6 +314,7 @@ export default function Navbar() {
                     data-bs-toggle={!user ? "modal" : ""}
                     data-bs-target="#exampleModal"
                     onClick={() => {
+                      console.log("Cart icon clicked, user:", user);
                       setOpen(true);
                       closeNavbar();
                     }}
@@ -321,7 +322,7 @@ export default function Navbar() {
                     <Link className="nav-link" to="cart">
                       <i className="fa-solid fa-cart-shopping text-main fs-5"></i>
                     </Link>
-                    <span className="d-inline-block cart d-flex justify-content-center align-items-center position-absolute  rounded-circle ">
+                    <span className="d-inline-block cart d-flex justify-content-center align-items-center position-absolute rounded-circle">
                       {data?.data?.numOfCartItems || 0}
                     </span>
                   </li>
@@ -331,31 +332,32 @@ export default function Navbar() {
                       type="button"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
+                      onClick={() => console.log("Dropdown button clicked, login:", login)}
                     >
                       <i className="fas fa-user text-main fs-5"></i>
                     </button>
-                    <ul class="dropdown-menu">
-                {login ? (
-                <li className="nav-item">
-                  <span className="nav-link ms-1 text-center">
-                    <span className="fw-bold"> Hi  <span className="text-main">{login}</span></span>
-                  </span>
-                </li>
-              ) : (
-                ""
-              )}
-              <hr/>
-                <li className="nav-item ">
-                <NavLink className="nav-link" to="updatepass">
-                  Update password
-                </NavLink>
-                </li>
-                 <li className="nav-item">
-                   <a className="nav-link curser" onClick={LogOut}>
-                     Logout
-                   </a>
-                 </li>
-                </ul>
+                    <ul className="dropdown-menu">
+                      {login ? (
+                        <li className="nav-item">
+                          <span className="nav-link ms-1 text-center">
+                            <span className="fw-bold">
+                              Hi <span className="text-main">{login}</span>
+                            </span>
+                          </span>
+                        </li>
+                      ) : null}
+                      <hr />
+                      <li className="nav-item">
+                        <NavLink className="nav-link" to="updatepass">
+                          Update password
+                        </NavLink>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link curser" onClick={LogOut}>
+                          Logout
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
                   <div className="d-flex flex-row flex-wrap social-icons">
                     <li className="nav-item p-2">
@@ -407,7 +409,6 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      {/* Modal */}
       <div
         className="modal fade"
         id="exampleModal"

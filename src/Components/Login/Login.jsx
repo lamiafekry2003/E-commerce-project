@@ -231,7 +231,7 @@ export default function Login() {
                 <span className="fw-medium">Forget Password?</span>
               </Link>
               <button
-                className="btn text-white bg-success"
+                className="btn text-white green-color"
                 disabled={!(formik.isValid && formik.dirty)}
                 type="submit"
               >
